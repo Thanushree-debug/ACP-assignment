@@ -6,12 +6,7 @@ Requirements:
 4. Write a function to display the picture
 Use a menu-driven approach.
 
-
-
 Add a demo function that preloads sample shapes on startup so the canvas is not empty when the program runs.
-
-
-
 
 Generate a README.md for this project explaining how to compile, run, and use the menu options.
 
