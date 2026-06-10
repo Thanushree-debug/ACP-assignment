@@ -326,20 +326,20 @@ void load_demo() {
    Main Menu
    ───────────────────────────────────────── */
 void print_menu() {
-    printf("\n╔══════════════════════════════╗\n");
-    printf("║   2D Graphics Editor (C)     ║\n");
-    printf("╠══════════════════════════════╣\n");
-    printf("║  1. Display canvas           ║\n");
-    printf("║  2. Add circle               ║\n");
-    printf("║  3. Add rectangle            ║\n");
-    printf("║  4. Add line                 ║\n");
-    printf("║  5. Add triangle             ║\n");
-    printf("║  6. List objects             ║\n");
-    printf("║  7. Delete object            ║\n");
-    printf("║  8. Modify object            ║\n");
-    printf("║  9. Clear canvas             ║\n");
-    printf("║  0. Exit                     ║\n");
-    printf("╚══════════════════════════════╝\n");
+    printf("\n+------------------------------+\n");
+    printf("|   2D Graphics Editor (C)     |\n");
+    printf("+------------------------------+\n");
+    printf("|  1. Display canvas           |\n");
+    printf("|  2. Add circle               |\n");
+    printf("|  3. Add rectangle            |\n");
+    printf("|  4. Add line                 |\n");
+    printf("|  5. Add triangle             |\n");
+    printf("|  6. List objects             |\n");
+    printf("|  7. Delete object            |\n");
+    printf("|  8. Modify object            |\n");
+    printf("|  9. Clear canvas             |\n");
+    printf("|  0. Exit                     |\n");
+    printf("+------------------------------+\n");
     printf("Choice: ");
 }
 
