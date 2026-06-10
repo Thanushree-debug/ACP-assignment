@@ -14,9 +14,7 @@
 #define COLS 80
 #define MAX_OBJECTS 50
 
-/* ─────────────────────────────────────────
-   Canvas
-   ───────────────────────────────────────── */
+/*  Canvas */
 char canvas[ROWS][COLS];
 
 void init_canvas() {
@@ -50,9 +48,9 @@ void set_pixel(int r, int c, char ch) {
         canvas[r][c] = ch;
 }
 
-/* ─────────────────────────────────────────
+/* 
    Object Types
-   ───────────────────────────────────────── */
+    */
 typedef enum { SHAPE_NONE, SHAPE_CIRCLE, SHAPE_RECT, SHAPE_LINE, SHAPE_TRIANGLE } ShapeType;
 
 typedef struct {
@@ -69,9 +67,9 @@ typedef struct {
 Object objects[MAX_OBJECTS];
 int obj_count = 0;
 
-/* ─────────────────────────────────────────
+/* 
    Drawing Primitives
-   ───────────────────────────────────────── */
+    */
 
 /* Bresenham line */
 void draw_line_pixels(int r1, int c1, int r2, int c2, char ch) {
@@ -124,9 +122,9 @@ void draw_triangle_pixels(int r1, int c1, int r2, int c2, int r3, int c3, char c
     draw_line_pixels(r3, c3, r1, c1, ch);
 }
 
-/* ─────────────────────────────────────────
+/* 
    Render all objects onto a fresh canvas
-   ───────────────────────────────────────── */
+    */
 void render_all() {
     init_canvas();
     for (int i = 0; i < obj_count; i++) {
@@ -150,9 +148,9 @@ void render_all() {
     }
 }
 
-/* ─────────────────────────────────────────
+/* 
    Add Objects
-   ───────────────────────────────────────── */
+    */
 void add_circle() {
     if (obj_count >= MAX_OBJECTS) { printf("Max objects reached.\n"); return; }
     Object o = {0};
@@ -210,9 +208,9 @@ void add_triangle() {
     printf("Triangle added as object #%d.\n", obj_count - 1);
 }
 
-/* ─────────────────────────────────────────
+/* 
    List / Delete / Modify
-   ───────────────────────────────────────── */
+    */
 const char *shape_name(ShapeType t) {
     switch (t) {
         case SHAPE_CIRCLE:   return "Circle";
@@ -307,9 +305,9 @@ void modify_object() {
     printf("Object #%d modified.\n", id);
 }
 
-/* ─────────────────────────────────────────
+/* 
    Demo: pre-load sample shapes
-   ───────────────────────────────────────── */
+    */
 void load_demo() {
     /* Circle: center (20,14), r=7 */
     objects[obj_count++] = (Object){SHAPE_CIRCLE, 20,14, 0,0, 0,0, 7, '*', 1};
@@ -322,9 +320,9 @@ void load_demo() {
     printf("Demo shapes loaded (objects 0-3).\n");
 }
 
-/* ─────────────────────────────────────────
+/* 
    Main Menu
-   ───────────────────────────────────────── */
+    */
 void print_menu() {
     printf("\n+------------------------------+\n");
     printf("|   2D Graphics Editor (C)     |\n");
