@@ -1,0 +1,18 @@
+Write a 2D graphics editor in C using * and _ characters.
+Requirements:
+1. Functions to draw circle, rectangle, line, and triangle
+2. Add, delete, and modify objects in the picture
+3. Use a 2D array of characters to store the picture
+4. Write a function to display the picture
+Use a menu-driven approach.
+
+
+
+Add a demo function that preloads sample shapes on startup so the canvas is not empty when the program runs.
+
+
+
+
+Generate a README.md for this project explaining how to compile, run, and use the menu options.
+
+
