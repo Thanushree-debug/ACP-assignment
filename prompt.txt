@@ -1,13 +1,71 @@
-Write a 2D graphics editor in C using * and _ characters.
+I need a complete C program for a mini project: **2D Graphics Editor using ASCII characters (* and _)**.
+
 Requirements:
-1. Functions to draw circle, rectangle, line, and triangle
-2. Add, delete, and modify objects in the picture
-3. Use a 2D array of characters to store the picture
-4. Write a function to display the picture
-Use a menu-driven approach.
 
-Add a demo function that preloads sample shapes on startup so the canvas is not empty when the program runs.
+* Use C language.
+* Use a menu-driven program.
+* Create functions to draw:
 
-Generate a README.md for this project explaining how to compile, run, and use the menu options.
+  * Circle
+  * Rectangle
+  * Line
+  * Triangle
+* Allow:
 
+  * Add object
+  * Delete object
+  * Modify object
+  * Display objects
+* Maintain a list of created objects.
+* Use a 2D character array where required by the assignment.
 
+IMPORTANT DISPLAY REQUIREMENT:
+
+I do NOT want all shapes merged onto a single canvas when displaying.
+
+Example:
+
+If I add:
+
+1. Circle
+2. Rectangle
+3. Triangle
+
+and then choose Display,
+
+the output should show:
+
+CIRCLE
+[only the circle drawing]
+
+(blank lines)
+
+RECTANGLE
+[only the rectangle drawing]
+
+(blank lines)
+
+TRIANGLE
+[only the triangle drawing]
+
+Each shape must be rendered on its own temporary canvas and displayed separately.
+
+Do NOT overlap or merge shapes onto the same display canvas.
+
+TERMINAL BEHAVIOR:
+
+* Keep the menu and user input history visible in the main terminal.
+* When Display is selected, open a separate output window/page (or separate console window if using Windows APIs).
+* The display window should contain only the shape outputs.
+* After viewing the output, the user can close that output window and return to the main menu.
+
+ADDITIONAL REQUIREMENTS:
+
+* No demo shapes on startup.
+* Start with an empty project.
+* Clean code with comments.
+* Original implementation.
+* Include all required structures and functions.
+* Ensure add, delete, modify, and display work correctly.
+* Generate the complete graphics_editor.c source code.
+* Also generate a README.md explaining compilation and usage.
