@@ -1,11 +1,11 @@
 /*
- * ============================================================
+ * 
  *  2D Graphics Editor — ASCII Art using * and _
  *  Language : C
  *  Features : Circle, Rectangle, Line, Triangle
  *             Add / Delete / Modify / Display objects
  *  Display  : Each shape shown on its OWN canvas in a NEW window
- * ============================================================
+ * 
  */
 
 #include <stdio.h>
@@ -23,9 +23,9 @@
 /* ── Temp file used to pass canvas to popup window ── */
 #define TEMP_FILE "canvas_display.txt"
 
-/* ============================================================
+/* 
    SHAPE TYPES
-   ============================================================ */
+    */
 typedef enum {
     SHAPE_CIRCLE,
     SHAPE_RECT,
@@ -33,9 +33,9 @@ typedef enum {
     SHAPE_TRIANGLE
 } ShapeType;
 
-/* ============================================================
+/* 
    OBJECT STRUCTURE
-   ============================================================ */
+    */
 typedef struct {
     ShapeType type;
     int x1, y1;       /* start point / center / vertex1 */
@@ -50,9 +50,9 @@ typedef struct {
 Object objects[MAX_OBJECTS];
 int obj_count = 0;
 
-/* ============================================================
+/* 
    CANVAS
-   ============================================================ */
+    */
 char canvas[ROWS][COLS];
 
 /* Fill canvas with spaces */
@@ -68,9 +68,9 @@ void set_pixel(int r, int c, char ch) {
         canvas[r][c] = ch;
 }
 
-/* ============================================================
+/* 
    DRAWING ALGORITHMS
-   ============================================================ */
+    */
 
 /* Bresenham's line algorithm */
 void draw_line(int r1, int c1, int r2, int c2, char ch) {
@@ -132,9 +132,9 @@ void render_object(Object *o) {
     }
 }
 
-/* ============================================================
+/* 
    HELPER — shape name string
-   ============================================================ */
+    */
 const char *shape_name(ShapeType t) {
     switch (t) {
         case SHAPE_CIRCLE:   return "CIRCLE";
@@ -145,9 +145,9 @@ const char *shape_name(ShapeType t) {
     }
 }
 
-/* ============================================================
+/* 
    WRITE canvas + header to file  (used for popup window)
-   ============================================================ */
+    */
 void write_canvas_to_file(FILE *f, const char *header) {
     fprintf(f, "\n  %s\n", header);
     fprintf(f, "  +");
@@ -163,7 +163,7 @@ void write_canvas_to_file(FILE *f, const char *header) {
     fprintf(f, "+\n\n");
 }
 
-/* ============================================================
+/* 
    DISPLAY — each shape on its own canvas, opened in new window
    ============================================================ */
 void display_all() {
@@ -209,9 +209,9 @@ void display_all() {
     printf("  >> Display window opened. Continue working in this window.\n");
 }
 
-/* ============================================================
+/* 
    ADD FUNCTIONS
-   ============================================================ */
+    */
 void add_circle() {
     if (obj_count >= MAX_OBJECTS) { printf("  Object limit reached.\n"); return; }
     Object o = {0};
@@ -272,9 +272,9 @@ void add_triangle() {
     printf("  Triangle added (ID = %d)\n", obj_count - 1);
 }
 
-/* ============================================================
+/* 
    LIST OBJECTS
-   ============================================================ */
+    */
 void list_objects() {
     printf("\n  ---- Object List ----\n");
     int any = 0;
@@ -295,9 +295,9 @@ void list_objects() {
     printf("  ---------------------\n");
 }
 
-/* ============================================================
+/* 
    DELETE OBJECT
-   ============================================================ */
+    */
 void delete_object() {
     list_objects();
     int id;
@@ -310,9 +310,9 @@ void delete_object() {
     printf("  Object [%d] deleted.\n", id);
 }
 
-/* ============================================================
+/* 
    MODIFY OBJECT
-   ============================================================ */
+    */
 void modify_object() {
     list_objects();
     int id;
@@ -360,9 +360,9 @@ void modify_object() {
     printf("  Object [%d] modified.\n", id);
 }
 
-/* ============================================================
+/* 
    MENU
-   ============================================================ */
+    */
 void print_menu() {
     printf("\n+--------------------------------+\n");
     printf("|    2D Graphics Editor (C)      |\n");
@@ -381,9 +381,9 @@ void print_menu() {
     printf("Choice: ");
 }
 
-/* ============================================================
+/* 
    MAIN
-   ============================================================ */
+    */
 int main() {
     init_canvas();
     printf("  2D Graphics Editor started. Canvas is empty.\n");
